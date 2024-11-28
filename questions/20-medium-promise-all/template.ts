@@ -1,5 +1,5 @@
 export declare function PromiseAll<T extends any[] = []>(
-  values: [...T],
+  values: readonly [...T],
 ): Promise<{ [k in keyof T]: T[k] extends Promise<infer R> ? R : T[k] }>
 
 const promiseAllTest1 = PromiseAll([1, 2, 3] as const)
